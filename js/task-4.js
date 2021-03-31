@@ -1,27 +1,9 @@
+import listUsers from './users.js';
 
-const formatString = function(string) {
-    if(string.length < 40){
-        return string
-    }
-    
-    return `${string.slice(0, 40)}...`
-}
+const users = listUsers;
+console.table(users);
 
-/*
-* Вызовы функции для проверки работоспособности твоей реализации.
-*/
-console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
-// вернется оригинальная строка
+const getInactiveUsers = users =>  users.filter(user => !user.isActive)
 
-console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
-// вернется форматированная строка
 
-console.log(formatString('Curabitur ligula sapien.'));
-// вернется оригинальная строка
-
-console.log(
-formatString(
-    'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',
-),
-);
-// вернется форматированная строка
+console.log(getInactiveUsers(users)); // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]

@@ -1,29 +1,12 @@
-const checkForSpam = function(message) {
-    const lowerCaseMessage = message.toLowerCase();
-    const arrOfmessage = lowerCaseMessage.split(' ');
-    let modernArr =[]
+import listUsers from './users.js';
 
-    // for(let mess of arrOfmessage){
-    //     if(!mess.indexOf('[')){
-    //         mess = mess.slice(1, -1)
-    //         modernArr.push(mess)
-    //     }
-    //     modernArr.push(mess)
-    // }
-    
-    // console.log(message);
-    // return modernArr.includes('spam') || modernArr.includes('sale');
-    return lowerCaseMessage.includes('spam') ||lowerCaseMessage.includes('sale');
-// твой код
-};
+const users = listUsers;
+console.table(users);
 
-/*
-* Вызовы функции для проверки работоспособности твоей реализации.
-*/
-console.log(checkForSpam('Latest technology news')); // false
+// Получить пользоваля (не массив) по email (поле email, он уникальный).
 
-console.log(checkForSpam('JavaScript weekly newsletter')); // false
+const getUserWithEmail = (users, email) => users.filter(user=>user.email === email)
 
-console.log(checkForSpam('Get best sale offers now!')); // true
 
-console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
+console.log(getUserWithEmail(users, 'shereeanthony@kog.com')); // {объект пользователя Sheree Anthony}
+console.log(getUserWithEmail(users, 'elmahead@omatom.com')); // {объект пользователя Elma Head}

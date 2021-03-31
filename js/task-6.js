@@ -1,28 +1,15 @@
+import listUsers from './users.js';
 
-const numbers = [];
-let total = 0;
+const users = listUsers;
+console.table(users);
 
-do {
-    let input = prompt('ведите число');
 
-    if(input === null){
+// Получить массив пользователей попадающих в возрастную категорию от min до max лет (поле age).
 
-        for(let number of numbers){
-            total += number;
-        }
+const getUsersWithAge = (users, min, max) => users.filter(user=> min < user.age && user.age < max)
+;
 
-        console.log(`Общая сумма чисел равна ${total}`);
-        break
-    }
+console.log(getUsersWithAge(users, 20, 30)); // [объект Ross Vazquez, объект Elma Head, объект Carey Barr]
 
-    input = Number(input);
-
-    if(Number.isNaN(input)){
-        alert('Было введено не число, попробуйте еще раз');
-        continue
-    }
-
-    numbers.push(input);
-
-}   while(true)
-
+console.log(getUsersWithAge(users, 30, 40));
+// [объект Moore Hensley, объект Sharlene Bush, объект Blackburn Dotson, объект Sheree Anthony]
