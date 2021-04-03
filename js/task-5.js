@@ -5,7 +5,7 @@ console.table(users);
 
 // Получить пользоваля (не массив) по email (поле email, он уникальный).
 
-const getUserWithEmail = (users, email) => users.filter(user=>user.email === email)
+const getUserWithEmail = (users, email) => users.find(user=> user.email === email)
 
 
 console.log(getUserWithEmail(users, 'shereeanthony@kog.com')); // {объект пользователя Sheree Anthony}

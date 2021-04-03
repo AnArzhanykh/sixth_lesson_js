@@ -6,7 +6,7 @@ console.table(users);
 // Массив имен всех пользователей у которых есть друг с указанным именем.
 
 
-    const getUsersWithFriend = (users, friendName) => users.filter(user =>user.friends.includes(friendName)? user : null).map(user=> user.name)
+    const getUsersWithFriend = (users, friendName) => users.filter(user =>user.friends.includes(friendName)).map(user=> user.name)
 
 
 console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
